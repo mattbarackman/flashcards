@@ -2,8 +2,45 @@
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
 }
-th {
-  text-align: left;
+
+nav  {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+nav a {
+  float:left;
+  padding: .8em 1.5em;
+  text-decoration: none;
+  color: #555;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  font: bold 1.1em/1 'trebuchet MS', Arial, Helvetica;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #fff #ccc #999 #eee;
+  background: #c1c1c1;
+  background: -moz-linear-gradient(#f5f5f5, #c1c1c1);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#c1c1c1));
+  background: -webkit-linear-gradient(#f5f5f5, #c1c1c1);
+  background: -o-linear-gradient(#f5f5f5, #c1c1c1);
+  background: -ms-linear-gradient(#f5f5f5, #c1c1c1);
+  background: linear-gradient(#f5f5f5, #c1c1c1);            
+ }
+ 
+nav a:hover, nav a:focus {
+  outline: 0;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0,0,0,.2);
+  background: #30beda;
+  background: -moz-linear-gradient(#30beda, #f8ac00);
+  background: -webkit-gradient(linear, left top, left bottom, from(#30beda), to(#f8ac00));
+  background: -webkit-linear-gradient(#30beda, #f8ac00);
+  background: -o-linear-gradient(#30beda, #f8ac00);
+  background: -ms-linear-gradient(#30beda, #f8ac00);
+  background: linear-gradient(#30beda, #f8ac00);
 }
