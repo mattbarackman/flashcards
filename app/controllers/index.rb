@@ -7,7 +7,7 @@ end
 # create user
 post '/users' do
 	User.create(params[:user])
-	redirect '/'
+	redirect '/decks'
 end
 
 # create session
@@ -16,7 +16,8 @@ post '/sessions' do
 	if @user
 		session["user"] = @user.id
 		"HEY YOU LOGGED IN"
-		redirect '/'
+		
+		redirect '/decks'
 	else
 		password = nil
 		"YOU FAILED TO LOG IN"
@@ -28,8 +29,4 @@ get '/logout' do
 	session.clear
 	puts "I logged out"
 	redirect '/'
-end
-
-get '/decks' do
-
 end
