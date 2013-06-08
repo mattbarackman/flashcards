@@ -4,6 +4,10 @@
   padding: 0px 20px 20px 20px;
 }
 
+.logout {
+  text-align: right;
+}
+
 nav  {
   display: block;
   width: 100%;

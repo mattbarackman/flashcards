@@ -18,9 +18,14 @@
   <title></title>
 </head>
 <body>
+  <% if @user %>
   <nav>
-    <a href="#">Home</a>
+    <a href="/">Home</a>
+    <form class="logout" action='/logout' method='get'>
+      <input type="submit" value="Logout">
+    </form>
   </nav>
+  <% end %>
   <div class="container">
     <%= yield %>
   </div>
