@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   before_create :encrypt_password
 
   validates :username, :password, presence: true
-  validates :username, uniqueness: true, case_sensitive: false
+  validates :username, uniqueness: true
 
   has_many :decks, :through => :rounds
   has_many :rounds
