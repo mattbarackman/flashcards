@@ -24,3 +24,8 @@ get '/logout' do
 	session.clear
 	redirect '/'
 end
+
+get '/users/:id' do
+	@user = User.find(params[:id])
+	erb :user
+end
