@@ -4,12 +4,7 @@ class Card < ActiveRecord::Base
 
 
   def correct?(guess)
-    self.answer == guess
+    self.answer.downcase == guess.downcase
   end
 
-  def to_json
-    {question: (erb :_question, :layout => false),
-    answer: (erb :_answer, :layout => false)}.to_json
-  end
-  
 end

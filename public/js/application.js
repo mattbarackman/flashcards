@@ -1,17 +1,21 @@
 $(document).ready(function() {
   var order;
-  var card_counter = 0;
+  var card_counter = 40;
+  var user_id;
 
   function questionRequest(){ 
-    $.ajax({
-        url: "/rounds/get_question",
-        method: "GET",
-        data: "card_id=" + order[card_counter] 
-      }).done(function(response){
-        $('.question').html(response);
-      });
+    if(card_counter == order.length)
+      window.location.href = '/decks';
+    else {
+      $.ajax({
+          url: "/rounds/get_question",
+          method: "GET",
+          data: "card_id=" + order[card_counter]
+        }).done(function(response){
+          $('.question').html(response);
+        });
+      }
     }
-
   $.ajax({
       url: "/rounds/card_order",
       method: "GET"
