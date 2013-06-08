@@ -27,5 +27,6 @@ end
 
 get '/users/:id' do
 	@user = User.find(params[:id])
+	@rounds = @user.rounds
 	erb :user
 end

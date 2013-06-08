@@ -13,7 +13,7 @@ end
 
 get '/rounds' do
   deck_id = params[:deck_id]
-  round = Round.create(user_id: session[:id], deck_id: @deck_id)
+  round = Round.create(user_id: session["user"], deck_id: deck_id)
   session[:deck_id] = deck_id
   session[:round_id] = round.id  
   erb :round

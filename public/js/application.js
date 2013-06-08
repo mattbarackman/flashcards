@@ -16,6 +16,7 @@ $(document).ready(function() {
         });
       }
     }
+    
   $.ajax({
       url: "/rounds/card_order",
       method: "GET"
