@@ -1,0 +1,11 @@
+TODO LIST
+
+- Generalize HTML partials for question
+- Add commentary on answers based on guess (say right! or wrong!)
+- Add display for stats at end of round (in addition to profile)
+- Add more stats to profile page (total card looked at, overall correct %, etc.)
+- Refactor where possible
+- Add another deck or two
+- Overall css niceties
+- Make the transitions sexier between cards
+
