@@ -2,12 +2,13 @@ $(document).ready(function() {
   var order;
   var card_counter = 0;
 
-   function questionRequest(){ $.ajax({
+  function questionRequest(){ 
+    $.ajax({
         url: "/rounds/get_question",
         method: "GET",
-        data: "hello"
+        data: "card_id=" + order[card_counter] 
       }).done(function(response){
-        console.log(response);
+        $('.question').html(response);
       });
     }
 
@@ -15,26 +16,27 @@ $(document).ready(function() {
       url: "/rounds/card_order",
       method: "GET"
     }).done(function(response){
-      order = response;
+      order = $.parseJSON(response);
       console.log(order);
-    }).done({
-      questionRequest();
+    }).done(
+      questionRequest
+    );
+
+
+  $('.question').on('submit','form',function(e){
+    console.log("in here");
+    e.preventDefault();
+    $.ajax({
+      url: "/rounds/submit_guess",
+      method: "POST",
+      data: $(this).serialize()
+    }).done(function(response){
+      $('.question').html(response);
+      card_counter++;
+      setTimeout(questionRequest, 2000);
+      });
     });
 
-
-
-
-
-  // $('.question').on('submit','form',function(e){
-  //   e.preventDefault();
-  //   $.ajax({
-  //     url: "/rounds/submit_guess",
-  //     method: "POST",
-  //     data: $(this).serialize()
-  //   }).done(function(){
-  //     card_counter++;
-  //   })
-  // }
 
 
   // var card_index

@@ -27,11 +27,14 @@ get '/rounds/card_order' do
 end
 
 get '/rounds/get_question' do
-  p params
-
+  @card = Card.find(params[:card_id])
+  erb :_question, :layout => false
 end
 
-get '/rounds/submit_guess' do
+post '/rounds/submit_guess' do
+  # p params
+  p @card = Card.find(params[:card_id])
+  erb :_answer, :layout => false
 end
 
 
