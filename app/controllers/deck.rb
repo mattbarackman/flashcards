@@ -1,6 +1,11 @@
 get '/decks' do
   @decks = Deck.all
-  erb :decks
+  @user = User.find(session["user"]) if session["user"]
+  if @user
+    erb :decks
+  else
+    redirect '/'
+  end
 end
 
 post '/decks' do
