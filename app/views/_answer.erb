@@ -1,1 +1,5 @@
-<p> <%=@card.answer%> </p>
+  <% if @correct %>
+    <h1 class="correct">That's right! The answer is <%=@card.answer%>.</h1>
+  <% else %>
+    <h1 class="wrong">Sorry! The correct answer is <%=@card.answer%>.</h1>
+  <% end %>

@@ -18,14 +18,19 @@
   <title></title>
 </head>
 <body>
-  <% if @user %>
-  <nav>
-    <a href="/">Home</a>
-    <form class="logout" action='/logout' method='get'>
-      <input type="submit" value="Logout">
-    </form>
-  </nav>
-  <% end %>
+  <header>
+    <% if @user %>
+      <nav>
+        <a class="header_button home" href="/decks">Home</a>
+        <form action='/logout' method='get'>
+          <input class="header_button logout" type="submit" value="Logout">
+        </form>
+        <form action='/users/<%= @user.id %>' method='get'>
+          <input class="header_button stats" type="submit" value="Stats">
+        </form>
+      </nav>
+      <% end %>
+  </header>
   <div class="container">
     <%= yield %>
   </div>
