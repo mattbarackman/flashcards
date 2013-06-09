@@ -1,10 +1,10 @@
 <h1>Keep up the good work, <%= @user.username %>!</h1>
 
 <h3>Previous Rounds:</h3>
-
 <% @rounds.each do |round| %>
   <div class="round_stats">
-  <h2> <%= round.deck.name %> played on <%= "#{round.created_at.month}/#{round.created_at.day}/#{round.created_at.year}" %> </h2>
-  <p><%= round.formatted_stats  %></p>
+    <h2><%= round.deck.name %></h2>
+    <p><%= round.formatted_stats  %></p>
+    <p>Played on <%= "#{round.created_at.month}/#{round.created_at.day}/#{round.created_at.year}" %></p>
   </div>
 <% end %>

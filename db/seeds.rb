@@ -10,5 +10,5 @@ end
 most_populous_city_by_state = Deck.create(name: "US: most populous city per state")
 
 CSV.foreach("States.csv", headers: true) do |row|
-  most_populous_city_by_state.cards << Card.create(question: "What is the most populous city of " + row.field('name') + "?", answer: row.field('most populous city'))
+  most_populous_city_by_state.cards << Card.create(question: "What is the most populous city in " + row.field('name') + "?", answer: row.field('most populous city'))
 end

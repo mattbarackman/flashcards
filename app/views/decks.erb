@@ -2,7 +2,7 @@
 
 <h2> Choose a deck to start. <h2>
 
-<ul>
+<ul class="decks">
   <% @decks.each do |deck| %>
   <li><a href="/rounds?deck_id=<%=deck.id%>"><%=deck.name%></a></li>
   <% end %>

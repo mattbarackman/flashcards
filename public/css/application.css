@@ -3,20 +3,27 @@
   width: 600px;
   padding: 20px;
   position: relative;
-
 }
 
-.logout {
-  text-align: right;
-  float: right;
-  margin-right: 20px;
+.decks {
+  list-style: none;
+  padding: 0;
 }
 
-.stats {
-  float: right;
-  margin-right: 20px;
+/* Cards */
+.correct {
+  background-color: #b7e6bd;
 }
 
+.wrong {
+  background-color: #f3e0dd;
+}
+
+.feedback {
+  padding: 15px;
+}
+
+/* User Stats Page */
 .round_stats {
   margin: 40px 0px;
   padding: 10px;
@@ -30,18 +37,33 @@
   background-color: #e1e3f4;
 }
 
-nav  {
+
+/* All of this is for the nav bar */
+
+.home_button {
+  float:left;
+}
+
+.logout_button {
+  text-align: right;
+  float: right;
+  margin-right: 20px;
+}
+
+.stats_button {
+  float: right;
+  margin-right: 20px;
+}
+
+nav {
   display: block;
   width: 100%;
   overflow: hidden;
 }
 
-.home {
-  float:left;
-}
-
-.feedback {
-  padding: 15px;
+header {
+  background-color: #848cd7;
+  padding: 10px;
 }
 
 .header_button {
@@ -52,7 +74,7 @@ nav  {
   font: bold 1.1em/1 'trebuchet MS', Arial, Helvetica;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border-width: 1px;
+  border-width: 0px;
   border-style: solid;
   border-color: #fff #ccc #999 #eee;
   background: #c1c1c1;
@@ -64,7 +86,7 @@ nav  {
   background: linear-gradient(#f5f5f5, #c1c1c1);            
  }
  
-nav a:hover, nav a:focus {
+nav a:hover, nav a:focus, nav input:hover, nav input:focus {
   outline: 0;
   color: #fff;
   text-shadow: 0 1px 0 rgba(0,0,0,.2);
@@ -75,17 +97,4 @@ nav a:hover, nav a:focus {
   background: -o-linear-gradient(#30beda, #f8ac00);
   background: -ms-linear-gradient(#30beda, #f8ac00);
   background: linear-gradient(#30beda, #f8ac00);
-}
-
-.correct {
-  background-color: #b7e6bd;
-}
-
-.wrong {
-  background-color: #f3e0dd;
-}
-
-header {
-  background-color: #848cd7;
-  padding: 10px;
 }
