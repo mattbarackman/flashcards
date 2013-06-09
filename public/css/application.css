@@ -12,6 +12,23 @@
   margin-right: 20px;
 }
 
+.stats {
+  float: right;
+  margin-right: 20px;
+}
+
+.round_stats {
+  margin: 40px 0px;
+  padding: 10px;
+}
+
+.container .round_stats:nth-child(odd) {
+  background-color: #DDD;
+}
+
+.container .round_stats:nth-child(even) {
+  background-color: #e1e3f4;
+}
 nav  {
   display: block;
   width: 100%;

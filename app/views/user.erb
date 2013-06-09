@@ -1,8 +1,8 @@
 <h1>This is the page of stats for <%= @user.username %></h1>
 
   <% @rounds.each do |round| %>
-    <h2> <%= round.deck.name %> played on <%= "#{round.created_at.month}/#{round.created_at.day}/#{round.created_at.year}" %> </h2>
     <div class="round_stats">
-      <%= round.formatted_stats  %>
+    <h2> <%= round.deck.name %> played on <%= "#{round.created_at.month}/#{round.created_at.day}/#{round.created_at.year}" %> </h2>
+      <p><%= round.formatted_stats  %></p>
     </div>
   <% end %>
