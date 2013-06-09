@@ -1,11 +1,15 @@
 .container {
   margin: 20px auto;
   width: 600px;
-  padding: 0px 20px 20px 20px;
+  padding: 20px;
+  position: relative;
+
 }
 
 .logout {
   text-align: right;
+  float: right;
+  margin-right: 20px;
 }
 
 nav  {
@@ -14,9 +18,11 @@ nav  {
   overflow: hidden;
 }
 
-
-nav a {
+.home {
   float:left;
+}
+
+.header_button {
   padding: .8em 1.5em;
   text-decoration: none;
   color: #555;
@@ -47,4 +53,17 @@ nav a:hover, nav a:focus {
   background: -o-linear-gradient(#30beda, #f8ac00);
   background: -ms-linear-gradient(#30beda, #f8ac00);
   background: linear-gradient(#30beda, #f8ac00);
+}
+
+.correct {
+  background-color: #b7e6bd;
+}
+
+.wrong {
+  background-color: #f3e0dd;
+}
+
+header {
+  background-color: #848cd7;
+  padding: 10px;
 }

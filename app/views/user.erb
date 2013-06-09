@@ -3,6 +3,6 @@
   <% @rounds.each do |round| %>
     <h2> <%= round.deck.name %> played on <%= "#{round.created_at.month}/#{round.created_at.day}/#{round.created_at.year}" %> </h2>
     <div class="round_stats">
-      You got <%= round.correct_percentage  %> correct!
+      <%= round.formatted_stats  %>
     </div>
   <% end %>
