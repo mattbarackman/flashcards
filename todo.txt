@@ -1,0 +1,23 @@
+TODO LIST:
+
+1. Generalize the _question.erb partial for other types of decks. 
+      
+      a. This will involve modifying the partial. [DONE]
+
+      b. Store the whole question in the Card object. (i.e. not just "California", but "What is the capital of California?".
+
+2. Add commentary on answers based on guess (say whether they got it right! or wrong!). I think this will involve adding some logic into the post '/rounds/submit_guess' route that tells the _answer.erb partial whether the guess was right or wrong and that partial needs to display a message accordingly. [DONE]
+
+3. Add more stats to profile page (total card looked at, overall correct %, etc.) [DONE]
+
+4. Add another deck or two
+
+NICE TO HAVE LIST:
+
+1. Refactor where possible
+
+2. Add overall css niceties [COULD BE IMPROVED STILL]
+
+3. Show round stats immediately at end of each round. This may involve redirecting to a stats page at the end of the round (see the ajax where the final redirect happens).
+
+4. Use jquery to make the transitions sexier between cards. Perhaps we could add an additional class to the question/answer partials that makes those dom elements hidden when they first load (using css), than we could fade them in or something using jquery's .show method.
