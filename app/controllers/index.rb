@@ -17,6 +17,7 @@ post '/sessions' do
 		redirect '/decks'
 	else
 		password = nil
+		erb :index
 	end
 end
 

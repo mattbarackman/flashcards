@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
     if user
       temp_encryption = Digest::SHA1.hexdigest("#{args[:password]}")
       user.password == temp_encryption ? user : nil
+    else
+      false
     end
   end
 

@@ -25,7 +25,7 @@ function questionRequest(){
         method: "GET",
         data: "card_id=" + order[card_counter]
       }).done(function(response){
-        $('.question').html(response);
+        $('.question').html(response).fadeIn();
       });
     }
   }
@@ -34,14 +34,19 @@ $(document).ready(function() {
 
   $('.question').on('submit','form',function(e){
     e.preventDefault();
+    $('.question').fadeOut();
     $.ajax({
       url: "/rounds/submit_guess",
       method: "POST",
       data: $(this).serialize()
     }).done(function(response){
-      $('.question').html(response);
+      $('.question').html(response).fadeIn();
       card_counter++;
-      setTimeout(questionRequest, 2000);
-      });
+      setTimeout(function () {
+        $('.question').fadeOut();
+        questionRequest();
+      }, 2000);
+
     });
+  });
 });

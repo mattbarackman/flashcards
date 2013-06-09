@@ -1,8 +1,10 @@
-<h1>This is the page of stats for <%= @user.username %></h1>
+<h1>Keep up the good work, <%= @user.username %>!</h1>
 
-  <% @rounds.each do |round| %>
-    <div class="round_stats">
-    <h2> <%= round.deck.name %> played on <%= "#{round.created_at.month}/#{round.created_at.day}/#{round.created_at.year}" %> </h2>
-      <p><%= round.formatted_stats  %></p>
-    </div>
-  <% end %>
+<h3>Previous Rounds:</h3>
+
+<% @rounds.each do |round| %>
+  <div class="round_stats">
+  <h2> <%= round.deck.name %> played on <%= "#{round.created_at.month}/#{round.created_at.day}/#{round.created_at.year}" %> </h2>
+  <p><%= round.formatted_stats  %></p>
+  </div>
+<% end %>
