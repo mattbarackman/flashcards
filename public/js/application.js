@@ -1,22 +1,10 @@
-$(document).ready(function() {
-  var order;
-  var card_counter = 0;
-  var user_id;
 
-  function questionRequest(){ 
-    if(card_counter == order.length)
-      window.location.href = '/decks';
-    else {
-      $.ajax({
-          url: "/rounds/get_question",
-          method: "GET",
-          data: "card_id=" + order[card_counter]
-        }).done(function(response){
-          $('.question').html(response);
-        });
-      }
-    }
-    
+var order;
+var card_counter = 0;
+var user_id;
+
+
+function startRound() {
   $.ajax({
       url: "/rounds/card_order",
       method: "GET"
@@ -25,6 +13,24 @@ $(document).ready(function() {
     }).done(
       questionRequest
     );
+};
+
+function questionRequest(){
+  if (card_counter == order.length) {
+    window.location.href = '/decks'
+  }
+  else {
+    $.ajax({
+        url: "/rounds/get_question",
+        method: "GET",
+        data: "card_id=" + order[card_counter]
+      }).done(function(response){
+        $('.question').html(response);
+      });
+    }
+  }
+
+$(document).ready(function() {
 
   $('.question').on('submit','form',function(e){
     e.preventDefault();
