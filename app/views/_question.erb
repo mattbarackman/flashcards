@@ -1,4 +1,4 @@
-  <h2> What is the capital of <%= @card.question %>? <h2>
+  <h2><%= @card.question %><h2>
 
     <form action="/guess" method="POST">
       <input type="text" name="guess" placeholder="Your guess here...">
