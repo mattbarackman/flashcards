@@ -8,6 +8,9 @@ class Round < ActiveRecord::Base
     (number_correct / number_of_cards_played.to_f*100).round(0)
   end
 
+  # Look into Active Record Scopes:
+  # http://guides.rubyonrails.org/active_record_querying.html#scopes
+  # So you can move this logic into the Guess model itself
   def number_correct
     self.guesses.where(is_correct: true).count
   end
@@ -25,7 +28,7 @@ class Round < ActiveRecord::Base
   end
 
   def completion_percentage
-    (number_of_cards_played / size_of_deck.to_f) * 100 
+    (number_of_cards_played / size_of_deck.to_f) * 100
   end
 
   def formatted_stats

@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
   has_many :decks, :through => :rounds
   has_many :rounds
 
+  # I would recommend authenticate take a username and a
+  # password argument. This would prevent people from just dumping params into
+  # authenticate.
   def self.authenticate(args)
     user = self.find_by_username(args[:username])
     if user
